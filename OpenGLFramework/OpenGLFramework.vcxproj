@@ -69,17 +69,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLFW\Include\include\GLFW;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLFW\Include\lib-vc2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLEW\Include\GL;C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLFW\Include\include\GLFW;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLEW\Lib;C:\Users\Vincent\Desktop\OpenGLFramework\Dependencies\GLFW\Include\lib-vc2015;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,6 +120,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\Graphics\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Graphics\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
