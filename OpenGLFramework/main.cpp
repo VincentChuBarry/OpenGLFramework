@@ -11,6 +11,10 @@ int main()
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
+	Vector3 vec5(105.0f, 120.0f, 25.0f);
+	Vector3 vec6(140.0f, 210.0f, 235.0f);
+	vec5 += vec6;
+
 	Vector4 vec1(105.0f, 20.0f, 5.0f, 15.0f);
 	Vector4 vec2(10.0f, 20.0f, 25.0f, 35.0f);
 	Vector4 vec4 = vec1 + vec2;
