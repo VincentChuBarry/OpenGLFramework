@@ -1,6 +1,6 @@
-#include "Vector4.h"
+#include "vec4.h"
 
-Vector4::Vector4()
+vec4::vec4()
 	:
 	m_x(0.0f),
 	m_y(0.0f),
@@ -10,7 +10,7 @@ Vector4::Vector4()
 
 }
 
-Vector4::Vector4(const float& x, const float& y, const float& z, const float& w)
+vec4::vec4(const float& x, const float& y, const float& z, const float& w)
 	:
 	m_x(x),
 	m_y(y),
@@ -20,9 +20,9 @@ Vector4::Vector4(const float& x, const float& y, const float& z, const float& w)
 
 }
 
-Vector4 Vector4::operator +(const Vector4& other)
+vec4 vec4::operator +(const vec4& other)
 {
-	Vector4 temp;
+	vec4 temp;
 	temp.m_x = m_x + other.m_x;
 	temp.m_y = m_y + other.m_y;
 	temp.m_z = m_z + other.m_z;
@@ -30,9 +30,9 @@ Vector4 Vector4::operator +(const Vector4& other)
 	return temp;
 }
 
-Vector4 Vector4::operator -(const Vector4& other)
+vec4 vec4::operator -(const vec4& other)
 {
-	Vector4 temp;
+	vec4 temp;
 	temp.m_x = m_x - other.m_x;
 	temp.m_y = m_y - other.m_y;
 	temp.m_z = m_z - other.m_z;
@@ -40,9 +40,9 @@ Vector4 Vector4::operator -(const Vector4& other)
 	return temp;
 }
 
-Vector4 Vector4::operator *(const Vector4& other)
+vec4 vec4::operator *(const vec4& other)
 {
-	Vector4 temp;
+	vec4 temp;
 	temp.m_x = m_x * other.m_x;
 	temp.m_y = m_y * other.m_y;
 	temp.m_z = m_z * other.m_z;
@@ -50,9 +50,9 @@ Vector4 Vector4::operator *(const Vector4& other)
 	return temp;
 }
 
-Vector4 Vector4::operator /(const Vector4& other)
+vec4 vec4::operator /(const vec4& other)
 {
-	Vector4 temp;
+	vec4 temp;
 	temp.m_x = m_x / other.m_x;
 	temp.m_y = m_y / other.m_y;
 	temp.m_z = m_z / other.m_z;
@@ -60,7 +60,7 @@ Vector4 Vector4::operator /(const Vector4& other)
 	return temp;
 }
 
-Vector4& Vector4::operator +=(const Vector4& other)
+vec4& vec4::operator +=(const vec4& other)
 {
 	m_x += other.m_x;
 	m_y += other.m_y;
@@ -69,7 +69,7 @@ Vector4& Vector4::operator +=(const Vector4& other)
 	return *this;
 }
 
-Vector4& Vector4::operator -=(const Vector4& other)
+vec4& vec4::operator -=(const vec4& other)
 {
 	m_x -= other.m_x;
 	m_y -= other.m_y;
@@ -78,7 +78,7 @@ Vector4& Vector4::operator -=(const Vector4& other)
 	return *this;
 }
 
-Vector4& Vector4::operator *=(const Vector4& other)
+vec4& vec4::operator *=(const vec4& other)
 {
 	m_x *= other.m_x;
 	m_y *= other.m_y;
@@ -86,7 +86,7 @@ Vector4& Vector4::operator *=(const Vector4& other)
 	m_w *= other.m_w;
 	return *this;
 }
-Vector4& Vector4::operator /=(const Vector4& other)
+vec4& vec4::operator /=(const vec4& other)
 {
 	m_x /= other.m_x;
 	m_y /= other.m_y;
@@ -95,13 +95,13 @@ Vector4& Vector4::operator /=(const Vector4& other)
 	return *this;
 }
 
-bool Vector4::operator ==(const Vector4& other)
+bool vec4::operator ==(const vec4& other)
 {
 	return (this->m_x == other.m_x && this->m_y == other.m_y 
 		&& this->m_z == other.m_z && this->m_w == other.m_w);
 }
 
-bool Vector4::operator !=(const Vector4& other)
+bool vec4::operator !=(const vec4& other)
 {
 	return !(*this == other);
 }

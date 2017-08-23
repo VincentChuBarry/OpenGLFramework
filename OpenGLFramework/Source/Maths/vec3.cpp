@@ -1,6 +1,6 @@
-#include "Vector3.h"
+#include "vec3.h"
 
-Vector3::Vector3()
+vec3::vec3()
 	:
 	m_x(0.0f),
 	m_y(0.0f),
@@ -9,7 +9,7 @@ Vector3::Vector3()
 
 }
 
-Vector3::Vector3(const float& x, const float& y, const float& z)
+vec3::vec3(const float& x, const float& y, const float& z)
 	:
 	m_x(x),
 	m_y(y),
@@ -18,43 +18,43 @@ Vector3::Vector3(const float& x, const float& y, const float& z)
 
 }
 
-Vector3 Vector3::operator +(const Vector3& other)
+vec3 vec3::operator +(const vec3& other)
 {
-	Vector3 temp;
+	vec3 temp;
 	temp.m_x = m_x + other.m_x;
 	temp.m_y = m_y + other.m_y;
 	temp.m_z = m_z + other.m_z;
 	return temp;
 }
 
-Vector3 Vector3::operator -(const Vector3& other)
+vec3 vec3::operator -(const vec3& other)
 {
-	Vector3 temp;
+	vec3 temp;
 	temp.m_x = m_x - other.m_x;
 	temp.m_y = m_y - other.m_y;
 	temp.m_z = m_z - other.m_z;
 	return temp;
 }
 
-Vector3 Vector3::operator *(const Vector3& other)
+vec3 vec3::operator *(const vec3& other)
 {
-	Vector3 temp;
+	vec3 temp;
 	temp.m_x = m_x * other.m_x;
 	temp.m_y = m_y * other.m_y;
 	temp.m_z = m_z * other.m_z;
 	return temp;
 }
 
-Vector3 Vector3::operator /(const Vector3& other)
+vec3 vec3::operator /(const vec3& other)
 {
-	Vector3 temp;
+	vec3 temp;
 	temp.m_x = m_x / other.m_x;
 	temp.m_y = m_y / other.m_y;
 	temp.m_z = m_z / other.m_z;
 	return temp;
 }
 
-Vector3& Vector3::operator +=(const Vector3& other)
+vec3& vec3::operator +=(const vec3& other)
 {
 	m_x += other.m_x;
 	m_y += other.m_y;
@@ -62,7 +62,7 @@ Vector3& Vector3::operator +=(const Vector3& other)
 	return *this;
 }
 
-Vector3& Vector3::operator -=(const Vector3& other)
+vec3& vec3::operator -=(const vec3& other)
 {
 	m_x -= other.m_x;
 	m_y -= other.m_y;
@@ -70,14 +70,14 @@ Vector3& Vector3::operator -=(const Vector3& other)
 	return *this;
 }
 
-Vector3& Vector3::operator *=(const Vector3& other)
+vec3& vec3::operator *=(const vec3& other)
 {
 	m_x *= other.m_x;
 	m_y *= other.m_y;
 	m_z *= other.m_z;
 	return *this;
 }
-Vector3& Vector3::operator /=(const Vector3& other)
+vec3& vec3::operator /=(const vec3& other)
 {
 	m_x /= other.m_x;
 	m_y /= other.m_y;
@@ -85,12 +85,12 @@ Vector3& Vector3::operator /=(const Vector3& other)
 	return *this;
 }
 
-bool Vector3::operator ==(const Vector3& other)
+bool vec3::operator ==(const vec3& other)
 {
 	return (this->m_x == other.m_x && this->m_y == other.m_y && this->m_z == other.m_z);
 }
 
-bool Vector3::operator !=(const Vector3& other)
+bool vec3::operator !=(const vec3& other)
 {
 	return !(*this == other);
 }
